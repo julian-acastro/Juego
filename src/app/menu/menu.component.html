@@ -1,0 +1,36 @@
+<div class="conteiner d-flex justify-content-center align-items-center" style="height: 100vh">
+    <div id="wrap">
+        <audio src="src/assets/music/bg.aac"></audio>
+        <div id="plane"></div>
+    </div>
+    <a href="#" class=" btn-neon new-game" [ngClass]="{'picker': newGame}" (click)="newGameClick()" >
+        <span class="span1"></span>
+        <span class="span2"></span>
+        <span class="span3"></span>
+        <span class="span4"></span>
+        Nuevo Juego
+    </a>
+    <div class="row col-4" [ngClass]="{'difficulty-select': !newGame}" >
+        <a href="#" class="btn-neon col-12 easy" >
+            <span class="span1"></span>
+            <span class="span2"></span>
+            <span class="span3"></span>
+            <span class="span4"></span>
+            Easy
+        </a>
+        <a href="#" class="btn-neon col-12 medium">
+            <span class="span1"></span>
+            <span class="span2"></span>
+            <span class="span3"></span>
+            <span class="span4"></span>
+            Medium
+        </a>
+        <a href="#" class="btn-neon col-12 hard" (click)="goGame(3,3)" [routerLink]="['/mesa']">
+            <span class="span1"></span>
+            <span class="span2"></span>
+            <span class="span3"></span>
+            <span class="span4"></span>
+            Hard
+        </a>
+    </div>
+</div>

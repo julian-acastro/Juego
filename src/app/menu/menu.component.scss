@@ -1,0 +1,152 @@
+$green: #13c07e;
+$orange: #F66A35;
+$yellow: #ceb82b;
+$lightBlue: #E6FFFF;
+$darkBlue: #6FC3DF;
+$black: #0C141F;
+$glowingColor: #18CAE6;
+$fogCenter: $glowingColor;
+$fogTopBottom: $black;
+$visualDistortionZapper: 180px;
+$nanoVelocity: 0.75s;
+
+.conteiner{
+    width: 100vw !important;
+    background-image: radial-gradient( #0f1b24 ,#000000 );
+    font-family: space;
+    perspective: 1000px;
+}
+.new-game{
+  padding: 15px 30px;
+  font-size: 120px;
+}
+.easy, .medium, .hard{
+  padding: 15px 30px;
+  font-size: 70px;
+}
+.btn-neon{
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  letter-spacing: 4px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.new-game:hover{
+    background: $glowingColor;
+    box-shadow: 0 0 10px $glowingColor, 0 0 40px $glowingColor, 0 0 80px $glowingColor;
+    transition-delay: 0,8s;
+}
+.picker{
+  transform: rotateY(55deg) ;
+  transition: 1s;
+  background: $glowingColor;
+  box-shadow: 0 0 10px $glowingColor, 0 0 40px $glowingColor, 0 0 80px $glowingColor;
+}
+.difficulty-select{
+  display: none;
+  transition: 1s;
+
+}
+.easy:hover{
+  background: $green;
+  box-shadow: 0 0 10px $green, 0 0 40px $green, 0 0 80px $green;
+  transition-delay: 0.1s;
+}
+.medium:hover{
+  background: $yellow;
+  box-shadow: 0 0 10px $yellow, 0 0 40px $yellow, 0 0 80px $yellow;
+  transition-delay: 0.1s;
+}
+.hard:hover{
+  background: $orange;
+  box-shadow: 0 0 10px $orange, 0 0 40px $orange, 0 0 80px $orange;
+  transition-delay: 0.1s;
+}
+.btn-neon span{
+    position: absolute;
+    display: block;
+}
+.span1{
+    top: 0;
+    left:-100%;
+    width:100%;
+    height: 5px;
+    background: linear-gradient(90deg,transparent,$glowingColor);
+}
+.btn-neon:hover .span1{
+    left:100%;
+    transition: 1s;
+}
+.span3{
+    bottom: 0;
+    right:-100%;
+    width:100%;
+    height: 5px;
+    background: linear-gradient(270deg,transparent,$glowingColor);
+}
+.btn-neon:hover .span3{
+    right:100%;
+    transition: 1s;
+}
+
+
+html {
+  height: 100%;
+  font-family: "C64 Pro Mono Local", verdana, helvetica, sans-serif;
+  font-size: 2.5vh;
+  overflow: hidden;
+}
+
+.conteiner {
+  position: relative;
+  height: 100%;
+  background: black; 
+}
+
+@-webkit-keyframes shakeYourBody {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 auto;
+  perspective: $visualDistortionZapper;
+  perspective-origin: 50% 50%;  
+}
+
+#plane {
+  width: 200%;
+  height: 130%;
+  position: absolute;
+  bottom: -30%;
+  left: -50%;
+  background-image: -webkit-linear-gradient($glowingColor 3px, transparent 3px), -webkit-linear-gradient(left, $glowingColor 3px, transparent 3px);
+  background-size: 100px 100px,100px 100px;
+  background-position: -1px -1px,-1px -1px;
+  transform: rotateX(85deg);
+  animation: planeMove $nanoVelocity linear infinite;
+}
+
+@keyframes planeMove {
+  from {
+    background-position: 0px 0px,0px 0px;
+  }
+  to {
+    background-position: 0px 100px, 0px 0px;
+  }
+}
+

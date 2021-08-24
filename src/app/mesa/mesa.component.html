@@ -1,0 +1,16 @@
+<div class="container ">
+    <div class="mesa-container">    
+        <div class="mesa">
+            <div class="area-carta"  *ngFor='let carta of cartas,let i = index' [ngClass]="{'active': exist(i) }" (click)="pick(i)" >
+                <div class="carta ">
+                <div class="cara frente" [ngClass]="{'hidden': !exist(i) }">
+                    <fa-icon [icon]="carta"></fa-icon>
+                </div>
+                <div class="cara dorso" >
+                </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+    
+</div>
